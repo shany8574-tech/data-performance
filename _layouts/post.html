@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="post-detail">
+  <div class="container">
+    <div class="post-header">
+      <div class="post-meta">
+        <span class="post-category">{{ page.category }}</span>
+        <span class="post-date"><i class="far fa-calendar-alt"></i> {{ page.date | date: "%Y년 %m월 %d일" }}</span>
+        <span class="post-read-time"><i class="far fa-clock"></i> {{ page.read_time | default: "5분" }} 읽기</span>
+      </div>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-description">{{ page.description }}</p>
+      {% if page.tags %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+        <span class="tag">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="post-content">
+      {{ content }}
+    </div>
+    <div class="post-nav">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="post-nav-prev">
+        <span><i class="fas fa-arrow-left"></i> 이전 글</span>
+        <strong>{{ page.previous.title }}</strong>
+      </a>
+      {% endif %}
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="post-nav-next">
+        <span>다음 글 <i class="fas fa-arrow-right"></i></span>
+        <strong>{{ page.next.title }}</strong>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</article>

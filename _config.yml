@@ -1,0 +1,42 @@
+title: "Data Performance Lab"
+description: "데이터 튜닝 & 성능 최적화 전문 개발자 블로그"
+url: "https://shany8574-tech.github.io"
+baseurl: "/data-performance"
+author:
+  name: "Shany"
+  bio: "Data Engineer & Performance Optimizer"
+  email: ""
+  github: "shany8574-tech"
+
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "project"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache

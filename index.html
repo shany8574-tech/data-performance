@@ -1,0 +1,130 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge"><i class="fas fa-bolt"></i> Data Performance Specialist</span>
+    <h1>
+      데이터의 <span class="gradient-text">성능</span>을<br>
+      극대화하는 기술
+    </h1>
+    <p>
+      SQL 쿼리 튜닝, 데이터베이스 최적화, Python 데이터 분석까지.
+      데이터가 빠르게 흐르도록 만드는 엔지니어의 기술 블로그입니다.
+    </p>
+    <div class="hero-buttons">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">
+        <i class="fas fa-book-open"></i> 블로그 보기
+      </a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="btn btn-secondary">
+        <i class="fas fa-briefcase"></i> 포트폴리오
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="container">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-database"></i></div>
+      <span class="stat-number" data-count="500" data-suffix="+">0</span>
+      <div class="stat-label">쿼리 최적화 건수</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-tachometer-alt"></i></div>
+      <span class="stat-number" data-count="95" data-suffix="%">0</span>
+      <div class="stat-label">평균 성능 개선율</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-chart-bar"></i></div>
+      <span class="stat-number" data-count="30" data-suffix="+">0</span>
+      <div class="stat-label">데이터 분석 프로젝트</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-code"></i></div>
+      <span class="stat-number" data-count="10000" data-suffix="+">0</span>
+      <div class="stat-label">Python 분석 코드 라인</div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Posts -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>최신 포스트</h2>
+      <p>데이터 튜닝과 성능 최적화에 대한 실전 인사이트를 공유합니다</p>
+    </div>
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+      <a href="{{ post.url | relative_url }}" class="post-card" style="text-decoration:none; color:inherit;">
+        <div class="post-card-banner {{ post.banner_class | default: 'python' }}">
+          <i class="{{ post.icon | default: 'fas fa-chart-line' }}"></i>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category">{{ post.category }}</span>
+            <span class="post-card-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          </div>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <div class="post-card-footer">
+            <div class="post-card-tags">
+              {% for tag in post.tags limit:3 %}
+              <span class="tag">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="section" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <h2>기술 스택</h2>
+      <p>데이터 성능 최적화를 위한 핵심 기술들</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <h3>SQL Tuning</h3>
+        <p>Oracle, PostgreSQL, MySQL 쿼리 최적화 및 실행 계획 분석</p>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-python"></i>
+        <h3>Python Analytics</h3>
+        <p>Pandas, NumPy, Matplotlib을 활용한 데이터 분석 및 시각화</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-server"></i>
+        <h3>Database Design</h3>
+        <p>인덱스 전략, 파티셔닝, 정규화/반정규화 설계</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-cogs"></i>
+        <h3>ETL Pipeline</h3>
+        <p>대용량 데이터 파이프라인 구축 및 성능 최적화</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Data Visualization</h3>
+        <p>인터랙티브 차트와 대시보드로 데이터 인사이트 전달</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Monitoring</h3>
+        <p>데이터베이스 성능 모니터링 및 병목 진단</p>
+      </div>
+    </div>
+  </div>
+</section>
